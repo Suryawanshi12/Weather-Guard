@@ -1,0 +1,61 @@
+WEATHERGUARD MODEL EVALUATION REPORT
+=============================================
+
+1. DATA SUMMARY
+Test records: 1555
+Prediction records: 1555
+Missing values in test data: 390
+Duplicate rows in test data: 0
+
+2. ORIGINAL MODEL PREDICTIONS
+Normal records: 1429
+Potential anomalies: 126
+Anomaly rate: 8.10%
+
+3. ANOMALY SCORE SUMMARY
+count    1555.000000
+mean        0.034826
+std         0.023846
+min        -0.085612
+25%         0.020894
+50%         0.038972
+75%         0.051078
+max         0.086940
+
+4. SYNTHETIC EVALUATION
+Synthetic test metrics are stored separately in:
+C:\Users\shrut\Desktop\WeatherGuard\reports\synthetic_model_evaluation.txt
+
+WEATHERGUARD SYNTHETIC EVALUATION
+=============================================
+Training records: 6220
+Test records: 1555
+Synthetic anomalies: 77
+Total evaluation records: 1632
+
+Accuracy: 92.28%
+Precision: 37.93%
+Recall: 100.00%
+F1-score: 55.00%
+
+Confusion Matrix:
+[[1429  126]
+ [   0   77]]
+
+Classification Report:
+                   precision    recall  f1-score   support
+
+   Assumed Normal       1.00      0.92      0.96      1555
+Synthetic Anomaly       0.38      1.00      0.55        77
+
+         accuracy                           0.92      1632
+        macro avg       0.69      0.96      0.75      1632
+     weighted avg       0.97      0.92      0.94      1632
+
+IMPORTANT: These metrics are from a synthetic experiment. They are not verified real-world model accuracy. Original test rows have not been confirmed as normal.
+
+
+5. LIMITATIONS
+The original weather test data has no verified ground-truth anomaly labels.
+Therefore, real-world accuracy, precision, recall, F1-score, and confusion matrix cannot be established from the original predictions alone.
+Synthetic evaluation metrics must not be presented as verified real-world model accuracy.
